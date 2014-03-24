@@ -1,0 +1,17 @@
+
+
+
+
+brew install mosquitto
+brew install python
+brew install virtuoso
+
+pip install virtualenv
+pip install virtualenvwrapper
+
+pip install pycurl
+pip install urlgrabber
+pip install paho
+
+sparqutils.py from RA/NAF repo
+

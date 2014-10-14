@@ -1,1 +1,16 @@
 *.directory
+*.json
+blue/
+files/
+green/
+blue/
+red/
+yellow/
+old/
+old2/
+old3/
+*.pyc
+output_images/
+files/
+outfile.png
+*.kml

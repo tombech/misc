@@ -90,7 +90,7 @@ where {
   }
   FILTER(?time > "%s"^^xsd:dateTime)
 } order by DESC(?time)
-""" % (datetime.now() - timedelta(days=31)).strftime("%Y-%m-%dT%H:%M:%SZ")
+""" % (datetime.now() - timedelta(days=3)).strftime("%Y-%m-%dT%H:%M:%SZ")
 
         result = sparqlutils.query_for_rows("http://tombech.org:8890/sparql", query)
 

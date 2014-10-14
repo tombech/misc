@@ -4,6 +4,7 @@ from dateutil.parser import parse
 from datetime import datetime
 import math
 import utils
+import pytz
 
 
 class MapWindow(QtGui.QWidget):
@@ -26,7 +27,8 @@ class MapWindow(QtGui.QWidget):
         painter = QtGui.QPainter(self)
         painter.begin(self.pixmap)
         
-        now = datetime.utcnow()
+        #now = datetime.utcnow()
+        now = pytz.utc.localize(datetime.utcnow())
         
         local_eqs = eqs[:]
         local_eqs.reverse()

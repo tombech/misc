@@ -3,7 +3,7 @@
 import sys, httplib, urlparse, urllib2, traceback, urllib
 import math, datetime, requests, json, csv
 import types 
-import sparqlutils
+import sparql
 
 
 REPLS = [('"', '\\"'), ('\n', '\\n'), ('\r', '\\r'), ('\t', '\\t'),

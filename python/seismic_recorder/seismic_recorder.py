@@ -54,14 +54,14 @@ def saveQuakes():
                         eq["lat"], eq["lon"], eq["dep"], eq["s"], eq["q"],
                         str(eq["dL"]) + " km " + eq["dD"] + " of " + eq["dR"])
         
-        print "Inserting quake in triplestore:", label
+        print "Inserting quake in triplestore:", label.encode("utf-8")
 
         triples.append('<http://psi.vedur.is/seismic/eq/%s> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://psi.vedur.is/seismic/schema/Earthquake>.' % key)
         triples.append('<http://psi.vedur.is/seismic/eq/%s> <http://www.w3.org/2000/01/rdf-schema#label> "%s".' % (key, sparqlutils.escape_literal(label)))
         triples.append('<http://psi.vedur.is/seismic/eq/%s> <http://psi.vedur.is/seismic/schema/depth> "%s"^^<http://www.w3.org/2001/XMLSchema#float>.' % (key, eq["dep"]))
         triples.append('<http://psi.vedur.is/seismic/eq/%s> <http://psi.vedur.is/seismic/schema/magnitude> "%s"^^<http://www.w3.org/2001/XMLSchema#float>.' % (key, eq["s"]))
         triples.append('<http://psi.vedur.is/seismic/eq/%s> <http://psi.vedur.is/seismic/schema/time> "%sZ"^^<http://www.w3.org/2001/XMLSchema#dateTime>.' % (key, eq["t"]))
-        triples.append('<http://psi.vedur.is/seismic/eq/%s> <http://psi.vedur.is/seismic/schema/place> "%s".' % (key, eq["dR"]))
+        triples.append('<http://psi.vedur.is/seismic/eq/%s> <http://psi.vedur.is/seismic/schema/place> "%s".' % (key, sparqlutils.escape_literal(eq["dR"])))
         triples.append('<http://psi.vedur.is/seismic/eq/%s> <http://psi.vedur.is/seismic/schema/direction> "%s".' % (key, eq["dD"]))
         triples.append('<http://psi.vedur.is/seismic/eq/%s> <http://psi.vedur.is/seismic/schema/distance> "%s"^^<http://www.w3.org/2001/XMLSchema#float>.' % (key, eq["dL"]))
         triples.append('<http://psi.vedur.is/seismic/eq/%s> <http://psi.vedur.is/seismic/schema/quality> "%s"^^<http://www.w3.org/2001/XMLSchema#float>.' % (key, eq["q"]))

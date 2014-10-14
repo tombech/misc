@@ -12,5 +12,6 @@ old3/
 *.pyc
 output_images/
 files/
+quakes/
 outfile.png
 *.kml
